@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <!-- =================== Social ===================  -->
-    <ul class="flex space-x-12 items-center justify-center w-1/2 mx-auto">
+    <ul class="flex items-center justify-center w-1/2 mx-auto space-x-12">
       <li>
         <a href="javascript:void"
           ><i class="fab fa-twitter fa-xl text-gray"></i
@@ -21,7 +21,7 @@
     <span class="line"></span>
 
     <!-- =================== Data ===================  -->
-    <ul class="text-center space-y-2">
+    <ul class="space-y-2 text-center">
       <li>
         <a href="mailto:amelmaster16@gmail.com">amelmaster16@gmail.com</a>
       </li>
@@ -36,28 +36,31 @@
       <li>
         <a
           routerLink="/ourstory"
-          class="transition-colors duration-300 hover:text-primary"
+          routerLinkActive="text-primary"
+          class="hover:text-primary transition-colors duration-300"
           >About</a
         >
       </li>
 
       <li>
         <a
-          routerLink="/blog"
-          class="transition-colors duration-300 hover:text-primary"
+          routerLink="/contactus"
+          routerLinkActive="text-primary"
+          class="hover:text-primary transition-colors duration-300"
           >Contact</a
         >
       </li>
 
       <li>
         <a
-          routerLink="/Blog"
-          class="transition-colors duration-300 hover:text-primary"
-          >About</a
+          routerLink="/blog"
+          routerLinkActive="text-primary"
+          class="hover:text-primary transition-colors duration-300"
+          >Blog</a
         >
       </li>
     </ul>
-    <p class="text-center text-xs mt-6">
+    <p class="mt-6 text-xs text-center">
       Copyright© {{ cuentYear }} AHMED MENISY All Rights Reserved.
     </p>
   </div>
