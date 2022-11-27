@@ -1,0 +1,233 @@
+<!-- -------- Collection Details -------- -->
+<section class="container py-10 pt-20">
+  <!-- Title  -->
+  <header class="relative">
+    <h2 class="title font-bondi uppercase">October</h2>
+    <p class="text-subtitle-2 tracking-[10px] text-center">Collection</p>
+    <h4
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 italic font-bold font-bondi text-9xl text-gray/20 z-0"
+    >
+      10
+    </h4>
+  </header>
+
+  <!-- Collection  -->
+
+  <!-- Number 10  And photo -->
+  <div
+    class="bg-[url('./assets/images/col.png')] h-screen bg-cover mt-10 relative"
+  >
+    <h2
+      class="absolute bottom-4 right-4 font-bondi italic font-bold text-9xl text-gray/70"
+    >
+      10
+    </h2>
+  </div>
+
+  <!-- Collection area  -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-6 gap-7"
+  >
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold2.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold3.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold4.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold5.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+
+    <!-- item -->
+    <article
+      class="cursor-pointer hover:scale-105 duration-300 transition-transform"
+      routerLink="/productdetails"
+    >
+      <figure class="relative">
+        <img
+          class="w-full"
+          src="./assets/images/cold6.png"
+          alt="collection details photo"
+        />
+        <span class="absolute bottom-2 right-2">
+          <i class="cursor-pointer far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption>
+        <h3 class="text-subtitle-1 2xl:text-title uppercase">
+          October collection
+        </h3>
+        <p class="text-light text-subtitle-2">reversible angora cardigan</p>
+
+        <span class="text-secondary font-bold"> $120 </span>
+      </figcaption>
+    </article>
+  </div>
+</section>
+<!-- -------- End Collection Details --------  -->
+
+<!-- -------- You may also like -------- -->
+<section class="container py-10" id="justYou">
+  <h2 class="title">You may also like</h2>
+  <div class="line mt-3"></div>
+
+  <owl-carousel-o [options]="customOptionsJust">
+    <ng-template carouselSlide>
+      <figure
+        class="hover:brightness-125 duration-500 transition-all cursor-pointer"
+        routerLink="/collection"
+      >
+        <img class="w-full" src="./assets/images/col1.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <h3 class="text-gray text-title">Black collection</h3>
+        </figcaption>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="hover:brightness-125 duration-500 transition-all cursor-pointer"
+        routerLink="/collection"
+      >
+        <img class="w-full" src="./assets/images/col2.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <h3 class="text-gray text-title">HAE BY HAEKIM</h3>
+        </figcaption>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="hover:brightness-125 duration-500 transition-all cursor-pointer"
+        routerLink="/collection"
+      >
+        <img class="w-full" src="./assets/images/col1.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <h3 class="text-gray text-title">Black collection</h3>
+        </figcaption>
+      </figure>
+    </ng-template>
+  </owl-carousel-o>
+</section>
+<!-- -------- End You may also like -------- -->

@@ -1,0 +1,1859 @@
+<nav
+  #navBar
+  class="inset-x-0 transition-colors duration-300 flex items-center p-8 h-[60px] justify-between fixed z-[9999]"
+>
+  <span
+    (click)="open('menu')"
+    class="inline-block cursor-pointer bg-icons w-[24px] h-[16px] bg-no-repeat bg-[-281px_-45px]"
+  ></span>
+
+  <img class="w-20" src="./assets/images/Logo.png" alt="LOGO" />
+
+  <div class="flex items-center space-x-4">
+    <!-- search  -->
+    <span
+      (click)="open('search')"
+      class="inline-block cursor-pointer bg-icons w-[22px] h-[22px] bg-no-repeat bg-[-239px_-42px]"
+    ></span>
+
+    <!-- Cart  -->
+    <span
+      (click)="open('cart')"
+      class="inline-block cursor-pointer bg-icons w-[19px] h-[24px] bg-no-repeat bg-[-26px_-41px]"
+    ></span>
+  </div>
+</nav>
+
+<!-- ------------ Cart ------------  -->
+<section
+  class="fixed inset-0 z-[999999] bg-white overflow-y-auto p-4 pb-0"
+  *ngIf="showCart"
+>
+  <!-- Close  -->
+  <span
+    (click)="close('cart')"
+    class="hover:text-orange-400 transition-colors duration-300 cursor-pointer"
+    ><i class="fa-solid fa-xmark fa-xl"></i
+  ></span>
+
+  <h2 class="title font-bondi">CART</h2>
+
+  <div class="line mt-3"></div>
+
+  <!-- All Products  -->
+  <ng-container *ngIf="true; else msg">
+    <!--  Products  -->
+    <section
+      class="grid grid-cols-1 gap-10 sm:w-3/5 mx-auto mt-6 h-[45vh] py-4 overflow-y-auto"
+    >
+      <!-- Cart Items  -->
+      <article>
+        <figure class="flex items-center space-x-2">
+          <img
+            class="shrink-0 w-24"
+            src="/assets/images/clo.png"
+            alt="closes photo"
+          />
+          <figcaption class="w-full">
+            <h3 class="text-subtitle-2 font-semibold uppercase">lamerei</h3>
+            <p class="text-body-md my-1">Recycle Boucle Knit Cardigan Pink</p>
+            <div class="grid grid-cols-[40px_40px_40px] mt-3">
+              <button
+                (click)="
+                  +inp.value > 1
+                    ? (inp.value = (+inp.value - 1).toString())
+                    : (inp.value = '1');
+                  subPrice(120)
+                "
+                [disabled]="inp.value === '1'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input
+                #inp
+                type="number"
+                class="focus:outline-none focus:ring-0 w-full p-0 text-center pointer-events-none"
+                value="1"
+              />
+              <button
+                (click)="
+                  +inp.value < 10
+                    ? (inp.value = (+inp.value + 1).toString())
+                    : (inp.value = '10');
+                  sumPrice(120)
+                "
+                [disabled]="inp.value === '10'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-plus fa-fw"></i>
+              </button>
+            </div>
+            <span
+              class="text-secondary text-title font-bondi inline-block mt-1 font-semibold"
+              >${{ 120 * +inp.value }}</span
+            >
+          </figcaption>
+        </figure>
+      </article>
+      <!-- Cart Items  -->
+      <article>
+        <figure class="flex items-center space-x-2">
+          <img
+            class="shrink-0 w-24"
+            src="/assets/images/clo1.png"
+            alt="closes photo"
+          />
+          <figcaption class="w-full">
+            <h3 class="text-subtitle-2 font-semibold uppercase">
+              5252 by o!oi
+            </h3>
+            <p class="text-body-md my-1">Recycle Boucle Knit Cardigan Pink</p>
+            <div class="grid grid-cols-[40px_40px_40px] mt-3">
+              <button
+                (click)="
+                  +inp1.value > 1
+                    ? (inp1.value = (+inp1.value - 1).toString())
+                    : (inp1.value = '1');
+                  subPrice(120)
+                "
+                [disabled]="inp1.value === '1'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input
+                #inp1
+                type="number"
+                class="focus:outline-none focus:ring-0 w-full p-0 text-center pointer-events-none"
+                value="1"
+              />
+              <button
+                (click)="
+                  +inp1.value < 10
+                    ? (inp1.value = (+inp1.value + 1).toString())
+                    : (inp1.value = '10');
+                  sumPrice(120)
+                "
+                [disabled]="inp1.value === '10'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-plus fa-fw"></i>
+              </button>
+            </div>
+            <span
+              class="text-secondary text-title font-bondi inline-block mt-1 font-semibold"
+              >${{ 120 * +inp1.value }}</span
+            >
+          </figcaption>
+        </figure>
+      </article>
+      <!-- Cart Items  -->
+      <article>
+        <figure class="flex items-center space-x-2">
+          <img
+            class="shrink-0 w-24"
+            src="/assets/images/clo2.png"
+            alt="closes photo"
+          />
+          <figcaption class="w-full">
+            <h3 class="text-subtitle-2 font-semibold uppercase">lamerei</h3>
+            <p class="text-body-md my-1">Recycle Boucle Knit Cardigan Pink</p>
+            <div class="grid grid-cols-[40px_40px_40px] mt-3">
+              <button
+                (click)="
+                  +inp2.value > 1
+                    ? (inp2.value = (+inp2.value - 1).toString())
+                    : (inp2.value = '1');
+                  subPrice(120)
+                "
+                [disabled]="inp2.value === '1'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input
+                #inp2
+                type="number"
+                class="focus:outline-none focus:ring-0 w-full p-0 text-center pointer-events-none"
+                value="1"
+              />
+              <button
+                (click)="
+                  +inp2.value < 10
+                    ? (inp2.value = (+inp2.value + 1).toString())
+                    : (inp2.value = '10');
+                  sumPrice(120)
+                "
+                [disabled]="inp2.value === '10'"
+                class="place-content-center active:bg-orange-500 active:text-white inline-grid w-8 h-8 border rounded-full"
+              >
+                <i class="fa-solid fa-plus fa-fw"></i>
+              </button>
+            </div>
+            <span
+              class="text-secondary text-title font-bondi inline-block mt-1 font-semibold"
+              >${{ 120 * +inp2.value }}</span
+            >
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <div class="line"></div>
+
+    <!-- Text And Total Price  -->
+    <section class="sm:w-3/5 mx-auto">
+      <div class="flex items-center justify-between">
+        <h3 class="text-title font-semibold">Sub Total</h3>
+        <span class="text-secondary text-subtitle-1 font-semibold"
+          >${{ totalPrice }}</span
+        >
+      </div>
+
+      <!-- Sub Text  -->
+      <p class="text-light text-body-md w-1/2">
+        shipping charges, taxes and discount codes are calculated at the time of
+        accounting.
+      </p>
+
+      <button
+        routerLink="/checkout"
+        class="font-bondi hover:bg-orange-400 hover:text-white flex items-center justify-center w-full gap-4 py-3 mt-6 text-white transition-colors duration-300 bg-black"
+      >
+        <i class="fa-brands fa-shopify"></i> BUY NOW
+      </button>
+    </section>
+  </ng-container>
+
+  <ng-template #msg>
+    <article class="content-evenly grid h-full">
+      <h3 class="text-title font-bondi text-center">
+        You have no items in your Shopping Bag.
+      </h3>
+
+      <button
+        class="font-bondi sm:w-3/5 hover:bg-orange-400 hover:text-white flex items-center justify-center w-full gap-4 py-3 mx-auto mt-6 text-white transition-colors duration-300 bg-black"
+      >
+        <i class="fa-brands fa-shopify"></i> Continue shopping
+      </button>
+    </article>
+  </ng-template>
+</section>
+<!-- ------------End Cart ------------  -->
+
+<!-- ------------ Search ------------ -->
+<section
+  class="fixed inset-0 z-[999999] bg-white overflow-y-auto p-4 pb-0"
+  *ngIf="showSearch"
+>
+  <div class="container py-10">
+    <!-- Search Input  -->
+    <label
+      for="search"
+      class="border-light focus-within:border-blue-700 flex items-center w-full border-b"
+    >
+      <span> <i class="fa-solid fa-magnifying-glass"></i></span>
+      <input
+        type="text"
+        id="search"
+        class="grow input-under border-0"
+        placeholder="Search items"
+        (keyup.Enter)="_Router.navigate(['/searchview'])"
+        [matChipInputFor]="chipGrid"
+        (matChipInputTokenEnd)="add($event)"
+      />
+      <!-- Close  -->
+      <span
+        (click)="close('search')"
+        class="hover:text-orange-400 transition-colors duration-300 cursor-pointer"
+        ><i class="fa-solid fa-xmark fa-xl"></i
+      ></span>
+    </label>
+
+    <!-- Recent search -->
+    <div class="my-4" [ngClass]="{ hidden: !keywords.length }">
+      <h3 class="text-light text-subtitle-1">Recent search</h3>
+
+      <mat-form-field appearance="fill" class="example-form-field w-full">
+        <mat-chip-grid
+          #chipGrid
+          aria-label="Enter keywords"
+          [formControl]="search"
+        >
+          <mat-chip-row
+            *ngFor="let keyword of keywords"
+            (removed)="removeKeyword(keyword)"
+          >
+            {{ keyword }}
+            <button matChipRemove aria-label="'remove ' + keyword">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        </mat-chip-grid>
+      </mat-form-field>
+    </div>
+
+    <!-- Popular search terms -->
+    <div class="mt-4">
+      <h3 class="text-subtitle-1 text-light">Popular search terms</h3>
+
+      <ul class="space-y-4">
+        <li>Trend</li>
+        <li>Dress</li>
+        <li>Bag</li>
+        <li>Tshirt</li>
+        <li>Beauty</li>
+        <li>Accessories</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ------------ End Search ------------ -->
+
+<!-------------- Menu ------------ -->
+<section
+  class="fixed inset-0 z-[999999] bg-white overflow-y-auto p-4 pb-0 overflow-x-hidden"
+  *ngIf="showMenu"
+>
+  <header class="flex items-center pb-10">
+    <!-- Close  -->
+    <span
+      (click)="close('menu')"
+      class="hover:text-orange-400 transition-colors duration-300 cursor-pointer"
+      ><i class="fa-solid fa-xmark fa-xl"></i
+    ></span>
+
+    <!-- Home  -->
+    <span
+      class="hover:text-orange-500 mx-auto transition-colors duration-300 cursor-pointer"
+      (click)="redirectTo('home')"
+    >
+      <i class="fa-solid fa-house fa-2x"></i>
+    </span>
+  </header>
+
+  <!-- Menu Area  -->
+  <section>
+    <mat-tab-group>
+      <mat-tab label="Women">
+        <div
+          class="sm:max-w-2xl container py-10 will-change-scroll h-[75vh] px-10 overflow-y-auto"
+        >
+          <ul class="grid gap-4">
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>New</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Apparel</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Bag</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Shoes</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Beauty</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Accessories</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Man">
+        <div
+          class="sm:max-w-2xl container py-10 will-change-scroll h-[75vh] px-10 overflow-y-auto"
+        >
+          <ul class="grid gap-4">
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>New</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Apparel</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Bag</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Shoes</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Beauty</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Accessories</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Kids">
+        <div
+          class="sm:max-w-2xl container py-10 will-change-scroll h-[75vh] px-10 overflow-y-auto"
+        >
+          <ul class="grid gap-4">
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>New</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Apparel</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Bag</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Shoes</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Beauty</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item  -->
+            <li>
+              <!-- Menu  -->
+              <div
+                (click)="showMenuBar($event)"
+                class="hover:text-orange-500 flex items-center justify-between transition-colors duration-300 cursor-pointer"
+              >
+                <!-- Text  -->
+                <span>Accessories</span>
+                <span
+                  ><i
+                    class="fa-solid fa-chevron-down transition-transform duration-300"
+                  ></i
+                ></span>
+              </div>
+
+              <!-- Inner Menu  -->
+              <ul class="px-7 hidden py-3">
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>outer</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>dress</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>blouse/shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>t-shirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>knitwear</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>skirt</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>pants</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>denim</span>
+                </li>
+
+                <li
+                  (click)="redirectTo('category')"
+                  class="hover:text-orange-500 flex items-center justify-between py-2 transition-colors duration-300 cursor-pointer"
+                >
+                  <span>kids</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </section>
+</section>
+<!-------------- End Menu ------------ -->

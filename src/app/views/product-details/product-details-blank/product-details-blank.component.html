@@ -1,0 +1,359 @@
+<!-- ----------- Products Details  ------------->
+<section class="md:max-w-5xl container">
+  <!-- Swiper2 Details  -->
+  <swiper
+    style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+    [spaceBetween]="10"
+    [thumbs]="{ swiper: thumbsSwiper }"
+    class="mySwiper2 w-full h-[calc(100vh_-_85px)]"
+  >
+    <ng-template swiperSlide
+      ><img
+        class="w-full h-full"
+        src="./assets/images/det.png"
+        alt="details closes photo"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img
+        class="w-full h-full"
+        src="./assets/images/det2.png"
+        alt="details closes photo"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img
+        class="w-full h-full"
+        src="./assets/images/det3.png"
+        alt="details closes photo"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img
+        class="w-full h-full"
+        src="./assets/images/det4.png"
+        alt="details closes photo"
+    /></ng-template>
+  </swiper>
+
+  <!-- Swiper Details  -->
+  <swiper
+    (swiper)="thumbsSwiper = $event"
+    [slidesPerView]="4"
+    [freeMode]="true"
+    [watchSlidesProgress]="true"
+    class="mySwiper pb-10"
+  >
+    <ng-template swiperSlide
+      ><img class="w-24 h-20 cursor-pointer" src="./assets/images/det1.png"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img class="w-24 h-20 cursor-pointer" src="./assets/images/det2.png"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img class="w-24 h-20 cursor-pointer" src="./assets/images/det3.png"
+    /></ng-template>
+
+    <ng-template swiperSlide
+      ><img class="w-24 h-20 cursor-pointer" src="./assets/images/det4.png"
+    /></ng-template>
+  </swiper>
+
+  <article class="md:w-1/2 mx-auto mt-4">
+    <!-- Title  -->
+    <div class="flex items-start justify-between">
+      <div>
+        <h2 class="title text-start">MOHAN</h2>
+        <p class="text-body-md my-2">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bondi font-semibold">$120</span>
+      </div>
+
+      <i class="fa-solid fa-upload"></i>
+    </div>
+
+    <ul class="flex items-center mt-3 space-x-4">
+      <li>Ring Size</li>
+      <li>
+        <input
+          class="peer/6 hidden appearance-none"
+          type="radio"
+          name="size"
+          id="6"
+        />
+        <label
+          class="place-content-center w-7 h-7 peer-checked/6:text-white peer-checked/6:bg-gray grid border rounded-full cursor-pointer"
+          for="6"
+          >6</label
+        >
+      </li>
+
+      <li>
+        <input
+          class="peer/8 hidden appearance-none"
+          type="radio"
+          name="size"
+          id="8"
+        />
+        <label
+          class="place-content-center w-7 h-7 peer-checked/8:text-white peer-checked/8:bg-gray grid border rounded-full cursor-pointer"
+          for="8"
+          >8</label
+        >
+      </li>
+
+      <li>
+        <input
+          class="peer/9 hidden appearance-none"
+          type="radio"
+          name="size"
+          id="9"
+        />
+        <label
+          class="place-content-center w-7 h-7 peer-checked/9:text-white peer-checked/9:bg-gray grid border rounded-full cursor-pointer"
+          for="9"
+          >9</label
+        >
+      </li>
+
+      <li>
+        <input
+          class="peer/10 hidden appearance-none"
+          type="radio"
+          name="size"
+          id="10"
+        />
+        <label
+          class="place-content-center w-7 h-7 peer-checked/10:text-white peer-checked/10:bg-gray grid border rounded-full cursor-pointer"
+          for="10"
+          >10</label
+        >
+      </li>
+
+      <li>
+        <input
+          class="peer/11 hidden appearance-none"
+          type="radio"
+          name="size"
+          id="11"
+        />
+        <label
+          class="place-content-center w-7 h-7 peer-checked/11:text-white peer-checked/11:bg-gray grid border rounded-full cursor-pointer"
+          for="11"
+          >11</label
+        >
+      </li>
+    </ul>
+
+    <button
+      class="active:bg-orange-900 hover:bg-orange-500 flex items-center justify-between w-full px-5 py-2 mt-5 text-white transition-colors duration-300 bg-black"
+    >
+      <span class="space-x-3">
+        <i class="fa-solid fa-plus"></i>
+        <span class="text-title font-bondi uppercase">Add to basket</span>
+      </span>
+      <span>
+        <i class="fa-regular fa-heart"></i>
+      </span>
+    </button>
+  </article>
+</section>
+<!-- ----------- End Products Details  ------------->
+
+<!-- ----------- Gallary -----------  -->
+<section class="container py-10">
+  <!-- title  -->
+  <h2 class="title">Gallery</h2>
+  <div class="line mt-3"></div>
+
+  <!-- All Gallary  -->
+  <article class="grid grid-cols-3 gap-4">
+    <figure>
+      <img
+        class="object-cover w-full h-full"
+        src="./assets/images/g1.png"
+        alt="gallary photo"
+      />
+    </figure>
+
+    <figure>
+      <img
+        class="object-cover w-full h-full"
+        src="./assets/images/g2.png"
+        alt="gallary photo"
+      />
+    </figure>
+
+    <figure>
+      <img
+        class="object-cover w-full h-full"
+        src="./assets/images/g3.png"
+        alt="gallary photo"
+      />
+    </figure>
+  </article>
+</section>
+<!-- ----------- End Gallary -----------  -->
+
+<!-- ----------- Care  ----------- -->
+<section class="container py-10">
+  <!-- Title  -->
+  <h2 class="title">CARE</h2>
+  <div class="line mt-3"></div>
+
+  <!-- accordian -->
+
+  <article class="flex justify-center w-1/2 mx-auto">
+    <cdk-accordion class="example-accordion">
+      <cdk-accordion-item
+        *ngFor="
+          let item of items;
+          let index = index;
+          let last = last;
+          let first = first
+        "
+        #accordionItem="cdkAccordionItem"
+        class="example-accordion-item"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index"
+        [expanded]="first ? true : false"
+      >
+        <div class="flex items-start gap-4 py-3" [class.border-b]="!last">
+          <!-- Icon  -->
+          <span class="shrink-0" [innerHTML]="item.icon"></span>
+
+          <!-- Text  -->
+          <div class="grow">
+            <!-- title  -->
+            <div
+              class="example-accordion-item-header space-x-4 cursor-pointer"
+              (click)="accordionItem.toggle()"
+            >
+              <h3 class="flex items-center justify-between">
+                <span class="text-title leading-none">
+                  {{ item.title }}
+                </span>
+
+                <!-- Close Icon  -->
+                <span class="example-accordion-item-description">
+                  <span *ngIf="accordionItem.expanded">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </span>
+                  <span *ngIf="!accordionItem.expanded">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </span>
+              </h3>
+            </div>
+
+            <!-- body  -->
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              <p class="text-body-md text-light w-4/5 pt-3 text-justify">
+                {{ item.body }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+  </article>
+</section>
+<!-- ---------- - End Care  ----------- -->
+
+<!-- ----------- You may also like  ----------- -->
+<section class="container py-10">
+  <h2 class="title">You may also like</h2>
+  <div class="line mt-1"></div>
+
+  <div class="mt-7 md:grid-cols-4 grid grid-cols-2 gap-10">
+    <!-- items  -->
+    <article class="shadow">
+      <figure class="relative">
+        <img
+          class="w-full h-full cursor-pointer" routerLink="/productdetails"
+          src="./assets/images/dg.png"
+          alt="recomend photo closes"
+        />
+        <span class="bottom-2 right-2 absolute cursor-pointer">
+          <i class="far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption class="p-3">
+        <h3 class="text-subtitle-2 font-bondi font-semibold">21WN</h3>
+        <p class="text-body-sm text-light my-2">reversible angora cardigan</p>
+        <span class="text-secondary font-semibold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- items  -->
+    <article class="shadow">
+      <figure class="relative">
+        <img
+          class="w-full h-full cursor-pointer" routerLink="/productdetails"
+          src="./assets/images/dg1.png"
+          alt="recomend photo closes"
+        />
+        <span class="bottom-2 right-2 absolute cursor-pointer">
+          <i class="far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption class="p-3">
+        <h3 class="text-subtitle-2 font-bondi font-semibold">21WN</h3>
+        <p class="text-body-sm text-light my-2">reversible angora cardigan</p>
+        <span class="text-secondary font-semibold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- items  -->
+    <article class="shadow">
+      <figure class="relative">
+        <img
+          class="w-full h-full cursor-pointer" routerLink="/productdetails"
+          src="./assets/images/dg2.png"
+          alt="recomend photo closes"
+        />
+        <span class="bottom-2 right-2 absolute cursor-pointer">
+          <i class="far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption class="p-3">
+        <h3 class="text-subtitle-2 font-bondi font-semibold">21WN</h3>
+        <p class="text-body-sm text-light my-2">reversible angora cardigan</p>
+        <span class="text-secondary font-semibold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- items  -->
+    <article class="shadow">
+      <figure class="relative">
+        <img
+          class="w-full h-full cursor-pointer" routerLink="/productdetails"
+          src="./assets/images/dg3.png"
+          alt="recomend photo closes"
+        />
+        <span class="bottom-2 right-2 absolute cursor-pointer">
+          <i class="far fa-heart fa-xl text-secondary"></i>
+        </span>
+      </figure>
+
+      <figcaption class="p-3">
+        <h3 class="text-subtitle-2 font-bondi font-semibold">21WN</h3>
+        <p class="text-body-sm text-light my-2">reversible angora cardigan</p>
+        <span class="text-secondary font-semibold">$120</span>
+      </figcaption>
+    </article>
+  </div>
+</section>
+<!-- ----------- End You may also like  ----------- -->

@@ -1,0 +1,17 @@
+.blogTag::-webkit-scrollbar {
+  height: 8px;
+}
+
+.blogTag::-webkit-scrollbar-track {
+  background-color: #f3f3f3;
+  border-radius: 50px;
+}
+
+.blogTag::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.blogTag:hover::-webkit-scrollbar-thumb {
+  background-color: #cfcfcf;
+}

@@ -1,0 +1,485 @@
+<!-- -------- Wrapper Landing  --------  -->
+<section id="slideHome" class="landing">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+      <figure
+        class="h-[620px] sm:min-h-screen bg-home-sm1 sm:bg-home-md bg-cover bg-no-repeat transform-gpu flex items-center relative"
+      >
+        <figcaption class="pl-10">
+          <h1
+            class="font-bondi text-gray sm:text-6xl md:text-7xl lg:text-9xl text-5xl font-bold"
+          >
+            <span class="block">Luxury</span>
+            <span class="block pl-3">Fashion</span>
+            <span class="block">&Accessories</span>
+          </h1>
+        </figcaption>
+
+        <button class="btn btn-down" routerLink="/collection">
+          Explore Collection
+        </button>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="h-[620px] sm:min-h-screen bg-home-sm2 sm:bg-home-md1 bg-cover bg-no-repeat transform-gpu flex items-center relative"
+      >
+        <figcaption class="pl-10">
+          <h2
+            class="font-bondi text-gray sm:text-6xl md:text-7xl lg:text-9xl text-5xl font-bold"
+          >
+            <span class="block">Luxury</span>
+            <span class="block pl-3">Fashion</span>
+            <span class="block">&Accessories</span>
+          </h2>
+        </figcaption>
+
+        <button class="btn btn-down" routerLink="/collection">
+          Explore Collection
+        </button>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="h-[620px] sm:min-h-screen bg-home-sm3 sm:bg-home-md2 bg-cover bg-no-repeat transform-gpu flex items-center relative"
+      >
+        <figcaption class="pl-10">
+          <h2
+            class="font-bondi text-gray sm:text-6xl md:text-7xl lg:text-9xl text-5xl font-bold"
+          >
+            <span class="block">Luxury</span>
+            <span class="block pl-3">Fashion</span>
+            <span class="block">&Accessories</span>
+          </h2>
+        </figcaption>
+      </figure>
+      <button class="btn btn-down" routerLink="/collection">
+        Explore Collection
+      </button>
+    </ng-template>
+  </owl-carousel-o>
+</section>
+<!-- -------- End Wrapper Landing  --------  -->
+
+<!-- --------  New Arrival  --------  -->
+<section class="container py-10 overflow-hidden">
+  <h2 class="title">New Arrival</h2>
+
+  <div class="line my-3"></div>
+
+  <!-- fliter controll  -->
+  <div class="flex items-center justify-center pt-10 space-x-6">
+    <button
+      [ngClass]="{ active: curentActiveArival === 'All' }"
+      class="text-[#888888]"
+      (click)="setArrivalActive('All')"
+      type="button"
+      data-filter="all"
+    >
+      All
+    </button>
+    <button
+      [ngClass]="{ active: curentActiveArival === 'Apparel' }"
+      class="text-[#888888]"
+      (click)="setArrivalActive('Apparel')"
+      type="button"
+      data-filter=".category-a"
+    >
+      Apparel
+    </button>
+    <button
+      [ngClass]="{ active: curentActiveArival === 'Dress' }"
+      class="text-[#888888]"
+      (click)="setArrivalActive('Dress')"
+      type="button"
+      data-filter=".category-b"
+    >
+      Dress
+    </button>
+    <button
+      [ngClass]="{ active: curentActiveArival === 'Tshirt' }"
+      class="text-[#888888]"
+      (click)="setArrivalActive('Tshirt')"
+      type="button"
+      data-filter=".category-c"
+    >
+      Tshirt
+    </button>
+    <button
+      [ngClass]="{ active: curentActiveArival === 'Bag' }"
+      class="text-[#888888]"
+      (click)="setArrivalActive('Bag')"
+      type="button"
+      data-filter=".category-d"
+    >
+      Bag
+    </button>
+  </div>
+
+  <!-- data  -->
+  <div
+    class="slid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid grid-cols-1 gap-4 mt-5"
+  >
+    <div
+      class="mix category-a cursor-pointer group"
+      data-order="1"
+      routerLink="/productdetails"
+    >
+      <figure class="group-hover:scale-110 transition-transform duration-300">
+        <img class="w-full" src="./assets/images/arrival-1.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div
+      class="mix category-b cursor-pointer group"
+      data-order="2"
+      routerLink="/productdetails"
+    >
+      <figure class="group-hover:scale-110 transition-transform duration-300">
+        <img class="w-full" src="./assets/images/arrival-2.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div
+      class="mix category-c category-b cursor-pointer group"
+      data-order="3"
+      routerLink="/productdetails"
+    >
+      <figure class="group-hover:scale-110 transition-transform duration-300">
+        <img class="w-full" src="./assets/images/arrival-3.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div
+      class="mix category-d category-c cursor-pointer group"
+      data-order="4"
+      routerLink="/productdetails"
+    >
+      <figure class="group-hover:scale-110 transition-transform duration-300">
+        <img class="w-full" src="./assets/images/arrival-4.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <button
+    routerLink="/category"
+    class="hover:text-primary flex items-center gap-2 mx-auto mt-3 transition-colors duration-300"
+  >
+    Explore More <i class="fa-solid fa-arrow-right fa-fw fa-xs"></i>
+  </button>
+
+  <div class="line"></div>
+
+  <footer
+    class="sm:grid-cols-3 justify-items-center grid w-3/4 grid-cols-2 gap-5 mx-auto"
+  >
+    <img src="./assets/images/Boss.png" alt="company logo" />
+    <img src="./assets/images/Burberry.png" alt="company logo" />
+    <img src="./assets/images/Catier.png" alt="company logo" />
+    <img src="./assets/images/Gucci.png" alt="company logo" />
+    <img src="./assets/images/Prada.png" alt="company logo" />
+    <img src="./assets/images/Tiffany & Co.png" alt="company logo" />
+  </footer>
+</section>
+<!-- -------- End New Arrival  --------  -->
+
+<!-- --------  Collections  --------  -->
+<section>
+  <h2 class="title">Collections</h2>
+
+  <figure class="relative mt-8 cursor-pointer" routerLink="/collection">
+    <img
+      class="h-[400px] w-full"
+      src="./assets/images/coollection.png"
+      alt="collection image"
+    />
+    <figcaption
+      data-collection="10"
+      class="top-1/2 right-10 absolute -translate-y-1/2 before:content-[attr(data-collection)] before:text-9xl before:md:text-[20rem] before:font-bold before:absolute before:top-1/2 before:-translate-y-1/2 before:left-1/2 before:-translate-x-1/2 before:-z-[1] before:text-gray/70 before:font-bondi before:italic"
+    >
+      <h3
+        class="md:text-8xl text-5xl italic font-semibold leading-none text-white"
+      >
+        October
+      </h3>
+      <p class="tracking-[14px] text-center leading-[0] text-white">
+        Collection
+      </p>
+    </figcaption>
+  </figure>
+</section>
+<!-- -------- End Collections  --------  -->
+
+<!-- --------  Video  --------  -->
+<section class="pb-10">
+  <div
+    class="aspect-w-16 aspect-h-7 group relative cursor-pointer"
+    (click)="playVido()"
+  >
+    <vg-player>
+      <video
+        #vid
+        [vgMedia]="$any(media)"
+        poster="./assets/images/paner.jpg"
+        #media
+        id="singleVideo"
+        preload="auto"
+      >
+        <source src="./assets/images/Wedding.mp4" type="video/mp4" />
+      </video>
+    </vg-player>
+    <span
+      *ngIf="vid.paused"
+      class="place-content-center group-hover:scale-110 bg-gray/60 top-1/2 left-1/2 absolute z-50 grid w-16 h-16 transition-transform duration-300 -translate-x-1/2 -translate-y-1/2 rounded-full"
+    >
+      <i class="fa-solid fa-caret-right fa-2x text-white"></i>
+    </span>
+  </div>
+</section>
+<!-- -------- End Video  --------  -->
+
+<!-- -------- Just for You  --------  -->
+<section class="container py-10" id="justYou">
+  <h2 class="title">Just for You</h2>
+  <div class="line mt-3"></div>
+
+  <owl-carousel-o [options]="customOptionsJust">
+    <ng-template carouselSlide>
+      <figure
+        class="cursor-pointer hover:grayscale transition duration-500"
+        routerLink="/productdetails"
+      >
+        <img class="w-full" src="./assets/images/arrival-1.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="cursor-pointer hover:grayscale transition duration-500"
+        routerLink="/productdetails"
+      >
+        <img class="w-full" src="./assets/images/arrival-2.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="cursor-pointer hover:grayscale transition duration-500"
+        routerLink="/productdetails"
+      >
+        <img class="w-full" src="./assets/images/arrival-3.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <figure
+        class="cursor-pointer hover:grayscale transition duration-500"
+        routerLink="/productdetails"
+      >
+        <img class="w-full" src="./assets/images/arrival-4.png" alt="fashin" />
+        <figcaption class="mt-3 text-center">
+          <p class="text-gray text-body-sm">21WN reversible angora cardigan</p>
+          <span class="text-secondary font-semibold">$120</span>
+        </figcaption>
+      </figure>
+    </ng-template>
+  </owl-carousel-o>
+</section>
+<!-- -------- End Just for You  --------  -->
+
+<!-- --------  @Trending --------  -->
+<section class="container py-10">
+  <h2 class="title">@Trending</h2>
+
+  <ul class="mt-7 flex flex-wrap items-center w-3/5 gap-4 mx-auto">
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#2021</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#spring</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#collection</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#fall</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#dress</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#autumncollection</span
+      >
+    </li>
+    <li>
+      <span class="inline-block px-3 py-2 rounded-full bg-[#F9F9F9]"
+        >#openfashion</span
+      >
+    </li>
+  </ul>
+</section>
+<!-- -------- End @Trending --------  -->
+
+<!-- -------- Open Fashin  --------  -->
+<section class="bg-offWhite py-10">
+  <div class="container">
+    <h2>
+      <img class="mx-auto" src="./assets/images/Logo.png" alt="logo photo" />
+    </h2>
+
+    <p class="text-subtitle-2 sm:w-3/5 md:w-1/3 mx-auto mt-5 text-center">
+      Making a luxurious lifestyle accessible for a generous group of women is
+      our daily drive.
+    </p>
+
+    <div class="line"></div>
+
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))] gap-4">
+      <article class="text-center">
+        <img
+          class="mx-auto"
+          src="./assets/images/st.png"
+          alt="fast fashin photo"
+        />
+        <p class="text-body-md px-8 pt-4">
+          Fast shipping. Free on orders over $25.
+        </p>
+      </article>
+
+      <article class="text-center">
+        <img
+          class="mx-auto"
+          src="./assets/images/st2.png"
+          alt="fast fashin photo"
+        />
+        <p class="text-body-md px-8 pt-4">
+          Sustainable process from start to finish.
+        </p>
+      </article>
+
+      <article class="text-center">
+        <img
+          class="mx-auto"
+          src="./assets/images/st1.png"
+          alt="fast fashin photo"
+        />
+        <p class="text-body-md px-8 pt-4">
+          Unique designs and high-quality materials.
+        </p>
+      </article>
+
+      <article class="text-center">
+        <img
+          class="mx-auto"
+          src="./assets/images/st3.png"
+          alt="fast fashin photo"
+        />
+        <p class="text-body-md px-8 pt-4">
+          Fast shipping. Free on orders over $25.
+        </p>
+      </article>
+    </div>
+    <img
+      class="mx-auto mt-4"
+      src="./assets/images/en.png"
+      alt="sticker photo"
+    />
+  </div>
+</section>
+<!-- -------- End Open Fashin  --------  -->
+
+<!-- -------- End Follow Us  --------  -->
+<section class="container py-10">
+  <h2 class="title">Follow Us</h2>
+  <p class="my-3 text-center">
+    <i class="fa-brands fa-instagram fa-2xl text-gray"></i>
+  </p>
+
+  <div class="md:grid-cols-4 mt-7 grid grid-cols-2 gap-4">
+    <figure class="relative">
+      <img
+        class="w-full"
+        src="./assets/images/us.png"
+        alt="instgrame photo persone"
+      />
+      <figcaption class="bottom-3 left-14 absolute">
+        <h3 class="text-white">@mia</h3>
+      </figcaption>
+    </figure>
+
+    <figure class="relative">
+      <img
+        class="w-full"
+        src="./assets/images/us2.png"
+        alt="instgrame photo persone"
+      />
+      <figcaption class="bottom-3 left-14 absolute">
+        <h3 class="text-white">@_jihyn</h3>
+      </figcaption>
+    </figure>
+
+    <figure class="relative">
+      <img
+        class="w-full"
+        src="./assets/images/us3.png"
+        alt="instgrame photo persone"
+      />
+      <figcaption class="bottom-3 left-14 absolute">
+        <h3 class="text-white">@mia</h3>
+      </figcaption>
+    </figure>
+
+    <figure class="relative">
+      <img
+        class="w-full"
+        src="./assets/images/us4.png"
+        alt="instgrame photo persone"
+      />
+      <figcaption class="bottom-3 left-14 absolute">
+        <h3 class="text-white">@_jihyn</h3>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<!-- -------- Follow Us  --------  -->

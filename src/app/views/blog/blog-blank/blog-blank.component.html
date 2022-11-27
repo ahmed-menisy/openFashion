@@ -1,0 +1,719 @@
+<section class="container pt-24">
+  <h2 class="title">Blog</h2>
+  <div class="line"></div>
+
+  <!-- Tags  -->
+  <div
+    class="sm:w-1/2 will-change-scroll snap-x snap-mandatory blogTag flex items-center gap-4 py-4 mx-auto overflow-x-auto rounded-full"
+  >
+    <h3
+      class="bg-offWhite min-w-[120px] font-semibold text-center snap-start px-3 py-2 rounded-full cursor-pointer hover:text-orange-500 transition-colors duration-300"
+    >
+      Fashion
+    </h3>
+    <h3
+      class="bg-offWhite min-w-[120px] font-semibold text-center snap-start px-3 py-2 rounded-full cursor-pointer hover:text-orange-500 transition-colors duration-300"
+    >
+      Promo
+    </h3>
+    <h3
+      class="bg-offWhite min-w-[120px] font-semibold text-center snap-start px-3 py-2 rounded-full cursor-pointer hover:text-orange-500 transition-colors duration-300"
+    >
+      Policy
+    </h3>
+    <h3
+      class="bg-offWhite min-w-[120px] font-semibold text-center snap-start px-3 py-2 rounded-full cursor-pointer hover:text-orange-500 transition-colors duration-300"
+    >
+      Lookbook
+    </h3>
+    <h3
+      class="bg-offWhite min-w-[120px] font-semibold text-center snap-start px-3 py-2 rounded-full cursor-pointer hover:text-orange-500 transition-colors duration-300"
+    >
+      Sale
+    </h3>
+  </div>
+
+  <!-- Select Grid Or List  -->
+
+  <div class="flex items-center justify-end space-x-2">
+    <span
+      [ngClass]="{ 'text-orange-700': selectGridOrList === 'grid' }"
+      class="hover:text-orange-400 cursor-pointer transition-colors duration-300"
+      (click)="gridOrList('grid')"
+    >
+      <i class="fa-solid fa-table-cells fa-xl"></i>
+    </span>
+
+    <span
+      [ngClass]="{ 'text-orange-700': selectGridOrList === 'list' }"
+      class="hover:text-orange-400 cursor-pointer transition-colors duration-300"
+      (click)="gridOrList('list')"
+    >
+      <i class="fa-solid fa-list fa-xl"></i>
+    </span>
+  </div>
+
+  <!-- Articles Data Here Grid  -->
+  <div
+    *ngIf="selectGridOrList === 'grid'"
+    class="sm:grid-cols-2 md:grid-cols-3 grid grid-cols-1 gap-4 mt-10"
+  >
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-4">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog1.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog2.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog3.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog4.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog5.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog6.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog7.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="relative hover:scale-110 transition-transform duration-300"
+      >
+        <div
+          class="relative before:content-[''] before:absolute before:h-1/2 before:bottom-0 before:left-0 before:w-full before:bg-gradient-to-t before:from-[#111]"
+        >
+          <img
+            routerLink="/blogpost"
+            class="w-full h-[200px] cursor-pointer"
+            src="./assets/images/blog8.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption>
+          <p class="text-subtitle-2 bottom-2 left-4 absolute text-white">
+            2021 Style Guide: The Biggest Fall Trends
+          </p>
+
+          <span class="top-2 right-2 absolute">
+            <i class="fa-regular fa-bookmark fa-1x text-white"></i
+          ></span>
+        </figcaption>
+      </figure>
+
+      <!-- Footer Data  -->
+      <footer class="flex flex-wrap items-center justify-between gap-2 mt-2">
+        <!-- Tags  -->
+        <ul class="text-light flex items-center gap-3">
+          <li class="tags-light">
+            <span>#Fashion</span>
+          </li>
+          <li class="tags-light"><span>#Tips</span></li>
+        </ul>
+
+        <!-- Date  -->
+        <span class="text-light">4 days ago</span>
+      </footer>
+    </article>
+  </div>
+
+  <!-- Articles Data Here Grid  -->
+  <div
+    *ngIf="selectGridOrList === 'list'"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10"
+  >
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            2021 Style Guide: The Biggest Fall Trends
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">4 days ago</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog1.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            3 Pairs of Denim You Won’t Believe
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">5 days ago</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog2.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            5 Fall Looks I’m Loving
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">01/11/2021</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog3.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            5 Fall Boot Trends You Need to Try
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">25/10/2021</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog4.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            2021 Style Guide: The Biggest Fall Trends
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">16/10/2021</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog5.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            3 Pairs of Denim You Won’t Believe
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">10/10/2021</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog6.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            2021 Style Guide: The Biggest Fall Trends
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">4 days ago</span>
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Articles  -->
+    <article>
+      <figure
+        class="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        routerLink="/blogpost"
+      >
+        <div class="shrink-0 w-[40%] md:w-1/3">
+          <img
+            class="w-full h-[155px]"
+            src="./assets/images/blog7.png"
+            alt="blog photo"
+          />
+        </div>
+
+        <figcaption class="grow">
+          <h3 class="text-xs sm:text-subtitle-2 font-semibold sm:font-semibold">
+            5 Fall Looks I’m Loving
+          </h3>
+          <p class="text-body-sm sm:text-body-md my-2 text-justify">
+            The excitement of fall fashion is here and I’m already loving some
+            of the trend forecasts
+          </p>
+
+          <span class="text-light mt-3 text-xs">5 days ago</span>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
+
+  <!-- Load More  -->
+  <button
+    class="flex items-center justify-center border mx-auto h-[48px] hover:text-white my-9 hover:bg-light transition-colors duration-300 gap-3 uppercase w-[211px]"
+  >
+    Load more
+    <i class="fa-solid fa-plus fa-fw"></i>
+  </button>
+</section>

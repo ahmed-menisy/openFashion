@@ -1,0 +1,996 @@
+<section class="container py-20">
+  <div class="flex items-center justify-between">
+    <span class="text-subtitle-1">4500 Apparel</span>
+
+    <div class="space-x-3">
+      <select
+        class="form-select rounded-full border-none focus:ring-0 bg-[#C4C4C4]/20 cursor-pointer"
+      >
+        <option value="new">New</option>
+        <option value="new">New</option>
+        <option value="new">New</option>
+        <option value="new">New</option>
+      </select>
+
+      <span
+        [ngClass]="{ 'text-orange-700': selectGridOrList === 'grid' }"
+        class="hover:text-orange-400 inline-grid place-content-center bg-[#c4c4c4]/20 rounded-full w-10 h-10 cursor-pointer transition-colors duration-300"
+        (click)="gridOrList('grid')"
+      >
+        <i class="fa-solid fa-table-cells fa-xl"></i>
+      </span>
+
+      <span
+        [ngClass]="{ 'text-orange-700': selectGridOrList === 'list' }"
+        class="hover:text-orange-400 inline-grid place-content-center bg-[#c4c4c4]/20 rounded-full w-10 h-10 cursor-pointer transition-colors duration-300"
+        (click)="gridOrList('list')"
+      >
+        <i class="fa-solid fa-list fa-xl"></i>
+      </span>
+    </div>
+  </div>
+
+  <mat-chip-row
+    *ngFor="let closename of closessName"
+    class="mr-3"
+    (removed)="remove(closename)"
+  >
+    {{ closename.name }}
+    <button matChipRemove [attr.aria-label]="'remove ' + closename">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-chip-row>
+
+  <!-- Grid Closes  -->
+  <section
+    *ngIf="selectGridOrList === 'grid'"
+    class="md:grid-cols-4 mt-7 grid grid-cols-2 gap-4"
+  >
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">21WN</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo1.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">lamerei</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo2.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">21WN</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo3.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">lamerei</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo4.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">21WN</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo5.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">lamerei</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo6.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">21WN</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo7.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">lamerei</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo8.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">21WN</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article>
+      <figure class="relative">
+        <img
+          class="w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo9.png"
+          alt="closes photo"
+        />
+        <span class="bottom-2 right-2 text-secondary absolute cursor-pointer">
+          <i class="fa-regular fa-heart fa-xl"></i>
+        </span>
+      </figure>
+      <figcaption class="mt-2">
+        <h3 class="text-body-md font-semibold">lamerei</h3>
+        <p class="text-body-sm my-px">reversible angora cardigan</p>
+        <span class="text-primary font-bold">$120</span>
+      </figcaption>
+    </article>
+  </section>
+
+  <!-- List Closes  -->
+  <section
+    *ngIf="selectGridOrList === 'list'"
+    class="md:grid-cols-2 mt-7 grid grid-cols-1 gap-4"
+  >
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check1"
+                id="s1"
+              />
+              <label
+                for="s1"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m1"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check1"
+              />
+              <label
+                for="m1"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l1"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check1"
+              />
+              <label
+                for="l1"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo1.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check2"
+                id="s2"
+              />
+              <label
+                for="s2"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m2"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check2"
+              />
+              <label
+                for="m2"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l2"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check2"
+              />
+              <label
+                for="l2"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo2.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check3"
+                id="s3"
+              />
+              <label
+                for="s3"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m3"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check3"
+              />
+              <label
+                for="m3"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l3"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check3"
+              />
+              <label
+                for="l3"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo3.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check4"
+                id="s4"
+              />
+              <label
+                for="s4"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m4"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check4"
+              />
+              <label
+                for="m4"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l4"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check4"
+              />
+              <label
+                for="l4"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo4.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check5"
+                id="s5"
+              />
+              <label
+                for="s5"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m5"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check5"
+              />
+              <label
+                for="m5"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l5"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check5"
+              />
+              <label
+                for="l5"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo5.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check6"
+                id="s6"
+              />
+              <label
+                for="s6"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m6"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check6"
+              />
+              <label
+                for="m6"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l6"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check6"
+              />
+              <label
+                for="l6"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo6.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check8"
+                id="s8"
+              />
+              <label
+                for="s8"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m8"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check8"
+              />
+              <label
+                for="m8"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l8"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check8"
+              />
+              <label
+                for="l8"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo7.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check10"
+                id="s10"
+              />
+              <label
+                for="s10"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m10"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check10"
+              />
+              <label
+                for="m10"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l10"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check10"
+              />
+              <label
+                for="l10"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo8.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check11"
+                id="s11"
+              />
+              <label
+                for="s11"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m11"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check11"
+              />
+              <label
+                for="m11"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l11"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check11"
+              />
+              <label
+                for="l11"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+
+    <!-- Item Close  -->
+    <article class="flex items-center gap-4">
+      <figure>
+        <img
+          class="shrink-0 w-full cursor-pointer"
+          routerLink="/productdetails"
+          src="./assets/images/clo9.png"
+          alt="closes photo"
+        />
+      </figure>
+      <figcaption class="w-full mt-2">
+        <h3 class="text-title font-semibold uppercase">lamerei</h3>
+        <p class="text-body-md my-px">Recycle Boucle Knit Cardigan Pink</p>
+        <span class="text-secondary font-bold">$120</span>
+
+        <p class="my-1">
+          <i class="fa-solid fa-star fa-fw text-secondary"></i>
+          <span class="text-subtitle-2"> 4.8 Ratings</span>
+        </p>
+
+        <div class="flex items-center justify-between w-3/5 mt-3">
+          <ul class="flex items-center space-x-3">
+            <li>Size</li>
+            <li>
+              <input
+                class="peer/s hidden appearance-none"
+                type="radio"
+                name="check12"
+                id="s12"
+              />
+              <label
+                for="s12"
+                class="peer-checked/s:bg-secondary peer-checked/s:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >S</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="m12"
+                class="peer/m hidden appearance-none"
+                type="radio"
+                name="check12"
+              />
+              <label
+                for="m12"
+                class="peer-checked/m:bg-secondary peer-checked/m:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >M</label
+              >
+            </li>
+
+            <li>
+              <input
+                id="l12"
+                class="peer/l hidden appearance-none"
+                type="radio"
+                name="check12"
+              />
+              <label
+                for="l12"
+                class="peer-checked/l:bg-secondary peer-checked/l:text-white place-content-center w-7 h-7 grid border rounded-full cursor-pointer"
+                >L</label
+              >
+            </li>
+          </ul>
+
+          <span class="text-secondary cursor-pointer">
+            <i class="fa-regular fa-heart fa-xl"></i>
+          </span>
+        </div>
+      </figcaption>
+    </article>
+  </section>
+
+  <!-- Pagination  -->
+  <div class="mt-5">
+    <mat-paginator
+      [length]="20"
+      [pageSize]="10"
+      hidePageSize="true"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</section>

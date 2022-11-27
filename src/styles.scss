@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800;6..96,900&display=swap");
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+@import "swiper/css";
+@import "swiper/css/free-mode";
+@import "swiper/css/navigation";
+@import "swiper/css/thumbs";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Tenor Sans", sans-serif;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      @apply bg-secondary;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-primary;
+    }
+  }
+}
+
+@layer components {
+  .line {
+    @apply my-8 h-px mx-auto w-[124.96px] border-t border-t-[#5555] relative block before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:w-[10px] before:h-[10px] before:border before:border-[#5555] before:bg-white before:rotate-45 before:z-10;
+  }
+
+  .btn {
+    @apply h-10 flex items-center  border border-transparent  px-8 hover:border-gray hover:bg-black transition-colors duration-300 rounded-full text-[#FCFCFC] bg-[#00000066]/40;
+  }
+
+  .btn-down {
+    @apply absolute bottom-10 left-1/2 -translate-x-1/2;
+  }
+
+  .title {
+    @apply text-title text-3xl text-center uppercase;
+  }
+
+  button.active {
+    @apply text-black relative before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:w-[5px] before:h-[5px] before:bg-primary before:rotate-45;
+  }
+
+  .tags-light {
+    @apply px-3 py-1 border rounded-full;
+  }
+
+  .input-under {
+    @apply form-input focus:ring-0 focus:outline-none border-light px-2 py-3 border-0 border-b;
+  }
+}
+
+:root {
+  --primary: #a8715a;
+  --secondary: #dd8560;
+  --gray: #555555;
+}
+
+// Body
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Custome css slideHome
+#slideHome .owl-dots {
+  position: absolute !important;
+  bottom: 10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#slideHome .owl-theme .owl-dots .owl-dot span {
+  all: unset;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #fcfcfc;
+  transform: rotate(45deg);
+}
+
+#slideHome .owl-theme .owl-dots .owl-dot.active span {
+  background-color: #fcfcfc;
+}
+
+// Custome css justYou
+#justYou .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#justYou .owl-theme .owl-dots .owl-dot span {
+  all: unset;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #888888;
+  transform: rotate(45deg);
+}
+
+#justYou .owl-theme .owl-dots .owl-dot.active span {
+  background-color: #888888;
+}
+
+#justYou .owl-carousel .owl-nav.disabled {
+  display: block !important;
+}

@@ -1,0 +1,30 @@
+:host
+  ::ng-deep
+  .mat-mdc-tab:not(.mat-mdc-tab-disabled)
+  .mdc-tab-indicator__content--underline {
+  border-color: var(--secondary) !important;
+  border-width: 1px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--secondary);
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 100%;
+    left: 50%;
+  }
+}
+
+:host ::ng-deep .mat-mdc-tab-header {
+  overflow: visible;
+  .mat-ripple {
+    overflow: visible;
+  }
+
+  .mat-mdc-tab-label-container {
+    overflow: visible !important;
+  }
+}
