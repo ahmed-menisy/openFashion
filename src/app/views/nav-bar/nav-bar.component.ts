@@ -25,7 +25,7 @@ export class NavBarComponent {
 
   constructor(
     private _Renderer2: Renderer2,
-    public _Router: Router,
+    private _Router: Router,
     private _ShareDataService: ShareDataService
   ) {}
 
@@ -118,8 +118,8 @@ export class NavBarComponent {
   }
 
   //redirect to and close nav menu
-  redirectTo(uri: string) {
+  redirectTo(uri: string, type: string) {
     this._Router.navigate([`/${uri}`]);
-    this.close('menu');
+    this.close(type);
   }
 }

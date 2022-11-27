@@ -6,7 +6,10 @@ import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { NavBarComponent } from 'src/app/views/nav-bar/nav-bar.component';
 import { FooterComponent } from 'src/app/views/footer/footer.component';
 import { ContactUsComponent } from 'src/app/views/contact-us/contact-us.component';
-import { CheckOutComponent } from 'src/app/views/check-out/check-out.component';
+import {
+  CheckOutComponent,
+  DialogContentExampleDialog,
+} from 'src/app/views/check-out/check-out.component';
 import { OurStoryComponent } from 'src/app/views/our-story/our-story.component';
 import { NotFoundComponent } from 'src/app/views/not-found/not-found.component';
 import { SearchViewComponent } from 'src/app/views/search-view/search-view.component';
@@ -16,6 +19,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     OurStoryComponent,
     SearchViewComponent,
     NotFoundComponent,
+    DialogContentExampleDialog,
   ],
   imports: [
     CommonModule,
@@ -38,6 +43,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ReactiveFormsModule,
     MatPaginatorModule,
     MatTabsModule,
+    MatDialogModule,
   ],
 })
 export class LayoutsModule {}

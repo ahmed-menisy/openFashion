@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-layout-blanks',
@@ -6,11 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout-blanks.component.scss'],
 })
 export class LayoutBlanksComponent {
+  constructor(private _Renderer2: Renderer2) {}
   // scroll To Top
   goUp(): void {
     scrollTo({
       top: 0,
       behavior: 'auto',
     });
+    this._Renderer2.removeClass(document.body, 'overflow-hidden');
   }
 }

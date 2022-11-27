@@ -1,1 +1,62 @@
-<p>check-out works!</p>
+<app-nav-bar></app-nav-bar>
+
+<section class="container py-20">
+  <h2 class="title font-bondi uppercase">Checkout</h2>
+  <div class="line mt-3"></div>
+
+  <!-- All Products  -->
+  <!--  Products  -->
+  <section
+    class="grid grid-cols-1 gap-10 sm:w-3/5 mx-auto mt-6 max-h-[70vh] py-4 overflow-y-auto"
+  >
+    <!-- Cart Items  -->
+    <article>
+      <figure class="flex items-center space-x-2">
+        <img
+          class="shrink-0 w-24"
+          src="./assets/images/clo.png"
+          alt="closes photo"
+        />
+
+        <figcaption class="w-full">
+          <h3 class="text-subtitle-2 font-semibold uppercase">lamerei</h3>
+          <p class="text-body-md my-1">Recycle Boucle Knit Cardigan Pink</p>
+
+          <div class="w-10 mt-3">
+            <input
+              #inp
+              type="number"
+              class="focus:outline-none focus:ring-0 w-full p-0 text-center pointer-events-none"
+              value="1"
+            />
+          </div>
+
+          <span
+            class="text-secondary text-title font-bondi inline-block mt-1 font-semibold"
+            >${{ 120 * +inp.value }}</span
+          >
+        </figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- Footer  -->
+  <footer class="sm:w-3/5 mx-auto mt-5">
+    <div class="flex items-center justify-between">
+      <h3 class="text-title font-semibold">Est. Total</h3>
+      <span class="text-secondary text-subtitle-1 font-semibold"
+        >${{ totalPrice }}</span
+      >
+    </div>
+
+    <button
+      mat-button
+      (click)="openDialog()"
+      class="font-bondi hover:bg-orange-400 hover:text-white flex items-center justify-center w-full gap-4 py-3 mt-6 text-white transition-colors duration-300 bg-black"
+    >
+      <i class="fa-brands fa-shopify"></i> Checkout
+    </button>
+  </footer>
+</section>
+
+<app-footer></app-footer>
